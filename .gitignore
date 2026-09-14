@@ -11,4 +11,5 @@ src/test/resources/config.properties
 
 # test results
 test-output/
+
 target/
