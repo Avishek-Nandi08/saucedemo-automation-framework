@@ -2,7 +2,7 @@ package locators;
 
 import org.openqa.selenium.By;
 
-public class CartLocators {
+public class InventoryLocators {
     
     // String Templates waiting for the product name
     private final String ADD_TO_CART_BTN_TEMPLATE = "//button[contains(@id,'add-to-cart-%s')]";
@@ -11,6 +11,8 @@ public class CartLocators {
     private By removeBtn = By.xpath("//button[contains(@id,'remove-')]");
     // Static locator for the cart badge
     private By cartBadge = By.className("shopping_cart_badge");
+    private By cartIcon = By.id("shopping_cart_container");
+    private By productNames= By.xpath("//div[@class='inventory_item_name']");
 
     // Getter for Add to Cart
     public By getAddToCartDynamicButton(String product) {
@@ -27,5 +29,14 @@ public class CartLocators {
     // Getter for Cart Badge
     public By getCartBadge() {
         return cartBadge;
+    }
+    
+    //Getter for Cart Icon
+    public By getCartIcon() {
+    	return cartIcon;
+    }
+    
+    public By getProductNames() {
+    	return productNames;
     }
 }

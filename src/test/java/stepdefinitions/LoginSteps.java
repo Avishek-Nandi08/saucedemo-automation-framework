@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 import actions.LoginActions;
+import actions.InventoryActions;
 import hooks.Hooks;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -12,6 +13,7 @@ public class LoginSteps {
     
     // Instantiate your Actions class, passing the driver from Hooks
     LoginActions loginActions = new LoginActions(Hooks.driver);
+    InventoryActions inventoryActions = new InventoryActions(Hooks.driver);
 
     @Given("the user is on the SauceDemo login page")
     public void the_user_is_on_the_saucedemo_login_page() {
@@ -36,6 +38,11 @@ public class LoginSteps {
     @When("clicks the login button")
     public void clicks_the_login_button() {
         loginActions.clickLogin();
+		/*
+		 * System.out.println("Waiting for alert popup"); try {
+		 * inventoryActions.acceptAlert(); }catch(Exception ex) {
+		 * System.out.println(ex); return; }
+		 */
     }
 
     @Then("the user should be redirected to the inventory page")
@@ -61,4 +68,5 @@ public class LoginSteps {
         // Assert that the UI text matches the expected string passed from your Feature file!
         Assert.assertEquals(actualError, expectedError, "The error message did not match!");
     }
+   
 }

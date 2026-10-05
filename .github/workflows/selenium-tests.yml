@@ -1,0 +1,38 @@
+name: Selenium Cucumber CI
+
+# Triggers the pipeline on code pushes, pull requests, or manually
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+  workflow_dispatch: 
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Set up JDK 11
+      uses: actions/setup-java@v4
+      with:
+        java-version: '11'
+        distribution: 'temurin'
+        cache: 'maven'
+
+    - name: Execute Selenium Tests
+      # This runs your Maven test suite and passes the headless flag
+      run: mvn clean test -Dheadless=true
+
+    - name: Save Test Reports
+      # The always() condition ensures the report saves even if a test fails
+      if: always() 
+      uses: actions/upload-artifact@v4
+      with:
+        name: Extent-Test-Report
+        # This matches the test-output folder in your project structure
+        path: test-output/ 
+        retention-days: 7
