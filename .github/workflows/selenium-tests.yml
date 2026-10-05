@@ -34,5 +34,5 @@ jobs:
       with:
         name: Extent-Test-Report
         # This matches the test-output folder in your project structure
-        path: test-output/ 
+        path: target/Reports/
         retention-days: 7
