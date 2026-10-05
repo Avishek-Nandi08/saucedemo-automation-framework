@@ -7,7 +7,6 @@ target/
 .classpath
 
 # Sensitive Data
-src/test/resources/config.properties
 
 # test results
 test-output/
