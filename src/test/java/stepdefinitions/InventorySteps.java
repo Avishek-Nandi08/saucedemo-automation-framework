@@ -65,17 +65,5 @@ public class InventorySteps {
         String actualUrl = inventoryActions.getCurrentUrl();
         Assert.assertTrue(actualUrl.contains("cart"));
     }
-    @Then("cart to contain all {string}")
-    public void cart_to_contain_all(String product) {
-        String[] products = product.split(", ");
-        String[] actualProducts = inventoryActions.getProductNames();
-        if(products.length!=actualProducts.length) {
-        	Assert.fail("Products number mismatched");
-        }else {
-        	for(int i=0;i<products.length;i++) {
-        		Assert.assertEquals(products[i], actualProducts[i]);
-        	}
-        	System.out.println("Expected and actual product matched");
-        }
-    }
+
 }

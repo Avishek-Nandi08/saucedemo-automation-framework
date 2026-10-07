@@ -10,7 +10,7 @@ import io.cucumber.testng.CucumberOptions;
         // Tells Cucumber where your step definitions and hooks are located
         glue = {"stepdefinitions", "hooks"},
         //dryRun = true,
-        tags = "@TC_INV_002",
+        tags = "@smoke",
         // The ExtentReports plugin requires this exact string (the colon at the end is mandatory)
         plugin = {
                 "pretty",

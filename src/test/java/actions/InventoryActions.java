@@ -37,10 +37,6 @@ public class InventoryActions {
 	public void clickCartIcon() {
 		actionHelper.safeClick(inventoryLocators.getCartIcon());
 	}
-	
-	public String[] getProductNames(){
-		return actionHelper.getMultipleTexts(inventoryLocators.getProductNames());
-	}
 	public String getCurrentUrl() {
 		return actionHelper.safeGetCurrentUrl();
 	}

@@ -35,8 +35,4 @@ public class InventoryLocators {
     public By getCartIcon() {
     	return cartIcon;
     }
-    
-    public By getProductNames() {
-    	return productNames;
-    }
 }
